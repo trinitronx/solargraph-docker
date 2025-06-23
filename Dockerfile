@@ -1,4 +1,4 @@
-FROM ruby:3.0.6-alpine
+FROM ruby:3.4.4-alpine3.22
 
 RUN apk add build-base
 RUN apk add git
@@ -6,7 +6,7 @@ RUN apk add git
 ENV GEM_HOME="/usr/local/bundle"
 ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
 
-ARG SOLARGRAPH_VERSION=0.49.0
+ARG SOLARGRAPH_VERSION=0.55.2
 
 RUN gem install solargraph -v ${SOLARGRAPH_VERSION}
 
