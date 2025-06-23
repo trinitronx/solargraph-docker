@@ -4,7 +4,7 @@ RUN apk add build-base
 RUN apk add git
 
 ENV GEM_HOME="/usr/local/bundle"
-ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
+ENV PATH="$GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH"
 
 ARG SOLARGRAPH_VERSION=0.55.2
 
