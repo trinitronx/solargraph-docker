@@ -19,4 +19,3 @@ EXPOSE 7658
 ENTRYPOINT [ "/usr/bin/entrypoint.sh" ]
 
 CMD [ "socket", "--host=0.0.0.0" ]
-
