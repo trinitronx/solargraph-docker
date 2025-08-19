@@ -4,7 +4,7 @@ solargraph download-core
 bundle install
 solargraph bundle
 
-solargraph "$@" & PID=`jobs -p`
+solargraph "$@" & PID=$(jobs -p)
 
 trap "kill -SIGQUIT $PID" INT
 wait
