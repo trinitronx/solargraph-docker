@@ -6,5 +6,5 @@ solargraph bundle
 
 solargraph "$@" & PID=$(jobs -p)
 
-trap "kill -SIGQUIT $PID" INT
+trap 'kill -SIGQUIT "$PID"' INT
 wait
