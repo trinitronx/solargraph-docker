@@ -1,0 +1,37 @@
+exclude: |
+    (?x)^(
+        .*\.svg|
+        .*\.html|
+        _site|
+        assets|
+        .sass-cache|
+        .ruby-(gemset|lsp|version)|
+        vendor/.*|
+        tmp/.*
+    )$
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v1.1.1
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+        exclude: .*\.patch
+- repo: https://github.com/DavidAnson/markdownlint-cli2
+  rev: v0.18.1
+  hooks:
+  - id: markdownlint-cli2
+-   repo: https://github.com/detailyang/pre-commit-shell.git
+    rev: 1.0.2
+    hooks:
+    -   id: shell-lint
+        args: ["--exclude=SC1090,SC1091,SC2034,SC2039,SC2140,SC2148,SC2153,SC2154,SC2164"]
+        exclude: |
+            (?x)^(
+                _site/.*|
+                .sass-cache/.*|
+                vendor/.*|
+                tmp/.*
+            )$
