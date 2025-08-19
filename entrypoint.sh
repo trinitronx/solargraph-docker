@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 
-solargraph download-core
+git config --global --add safe.directory "$PWD"
+
+[ -f "$PWD/Gemfile.lock" ] && bundle config set frozen true
 bundle install
-solargraph bundle
+solargraph gems
 
 solargraph "$@" & PID=$(jobs -p)
 
