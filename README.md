@@ -23,7 +23,7 @@ Run the server on port `7658`:
 ```shell
 docker run --name=solargraph-ruby --rm -d -p 7658:7658/tcp \
        -v $HOME/src/pub:$HOME/src/pub:ro \
-       trinitronx/solargraph:0.55.2-ruby-3.4.4-alpine3.22
+       trinitronx/solargraph:0.56.2-ruby-3.4.5-alpine3.22
 ```
 
 Note that the source code paths should match inside and outside the container.
@@ -70,7 +70,8 @@ docker run --name=solargraph-ruby -ti  --rm -ti \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/solargraph:/home/solargraph/.cache/solargraph:rw \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/gem:/home/solargraph/.cache/gem:rw \
   -v ${XDG_CONFIG_HOME:-$HOME/.config}/solargraph:/home/solargraph/.config/solargraph:rw \
-  trinitronx/solargraph:0.55.2-ruby-3.4.4-alpine3.22 config /home/solargraph/.config/solargraph
+  trinitronx/solargraph:0.56.2-ruby-3.4.5-alpine3.22 \
+    config /home/solargraph/.config/solargraph
 ```
 
 ### Project Gems & Bundler
@@ -97,5 +98,5 @@ docker run --name=solargraph-ruby --rm -d -p 7658:7658/tcp \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/solargraph:/home/solargraph/.cache/solargraph:rw \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/gem:/home/solargraph/.cache/gem:rw \
   -v ${XDG_CONFIG_HOME:-$HOME/.config}/solargraph:/home/solargraph/.config/solargraph:rw \
-  trinitronx/solargraph:latest
+  trinitronx/solargraph:0.56.2-ruby-3.4.5-alpine3.22
 ```
