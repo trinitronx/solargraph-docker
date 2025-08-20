@@ -57,6 +57,7 @@ The docker container's `entrypoint.sh` script supports volume mounting the cache
 & config directories as read/write. In order to ensure proper file permissions,
 the user & group IDs should match inside and outside the container. To do this,
 set the `UID` and `GID` environment variables to match those on the docker host.
+Note that RubyGem's cache dir should also be mounted (`$XDG_CACHE_HOME/gem`).
 
 Then, volume mount solargraph's cache and config directories as `:rw` and
 create a default config file if it does not already exist with:
@@ -67,6 +68,7 @@ docker run --name=solargraph-ruby -ti  --rm -ti \
   --workdir $PWD \
   -e UID=$(id -u) -e GID=$(id -g) \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/solargraph:/home/solargraph/.cache/solargraph:rw \
+  -v ${XDG_CACHE_HOME:-$HOME/.cache}/gem:/home/solargraph/.cache/gem:rw \
   -v ${XDG_CONFIG_HOME:-$HOME/.config}/solargraph:/home/solargraph/.config/solargraph:rw \
   trinitronx/solargraph:0.55.2-ruby-3.4.4-alpine3.22 config /home/solargraph/.config/solargraph
 ```
@@ -93,6 +95,7 @@ docker run --name=solargraph-ruby --rm -d -p 7658:7658/tcp \
   -e SOLARGRAPH_APK_PKGS='libffi-dev' \
   -e UID=$(id -u) -e GID=$(id -g) \
   -v ${XDG_CACHE_HOME:-$HOME/.cache}/solargraph:/home/solargraph/.cache/solargraph:rw \
+  -v ${XDG_CACHE_HOME:-$HOME/.cache}/gem:/home/solargraph/.cache/gem:rw \
   -v ${XDG_CONFIG_HOME:-$HOME/.config}/solargraph:/home/solargraph/.config/solargraph:rw \
   trinitronx/solargraph:latest
 ```

@@ -60,6 +60,7 @@ wait "$PID"
 
 # Fix permissions for volume mounted cache & config dirs
 chown solargraph:solargraph /home/solargraph/.cache/solargraph
+chown solargraph:solargraph /home/solargraph/.cache/gem
 chown solargraph:solargraph /home/solargraph/.config/solargraph
 
 sudo --preserve-env=GEM_HOME,BUNDLE_APP_CONFIG -u "$USER" solargraph gems &
