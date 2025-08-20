@@ -1,0 +1,14 @@
+---
+# https://regex101.com/r/QtZ0Jq/1
+frontMatter: >-
+  (^---\s*?(\r\n|\r|\n|$)[^]*?---(\r\n|\r|\n|$))
+config:
+  heading-style:
+    style: atx
+  hr-style:
+    style: "---"
+  line-length:
+    line_length: 180
+  no-inline-html: false
+  no-duplicate-heading: false
+  single-h1: false
