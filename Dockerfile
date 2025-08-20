@@ -9,6 +9,7 @@ ENV PATH="$GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH"
 ARG SOLARGRAPH_VERSION=0.56.2
 
 RUN gem install solargraph -v ${SOLARGRAPH_VERSION}
+RUN gem install solargraph-rspec
 
 ADD entrypoint.sh /usr/bin/
 
